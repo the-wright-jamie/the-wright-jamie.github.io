@@ -1,0 +1,361 @@
+/* src/index.css */
+@import 'tailwindcss';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  src: url(../fonts/material-symbols-rounded.ttf);
+}
+
+@font-face {
+  font-family: 'Blue Screen';
+  font-style: normal;
+  src: url(../fonts/bluescreen.ttf);
+}
+
+@font-face {
+  font-family: 'Forge';
+  font-style: normal;
+  src: url(../fonts/forge.ttf);
+}
+
+@font-face {
+  font-family: 'LCD';
+  font-style: normal;
+  src: url(../fonts/LCD.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Flex';
+  font-style: normal;
+  src: url(../fonts/Roboto-Flex.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  font-style: normal;
+  src: url(../fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Thin';
+  font-style: normal;
+  src: url(../fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  src: url(../fonts/RobotoCondensed-VariableFont_wght.ttf);
+}
+
+b {
+  font-family: 'Roboto Condensed';
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  font-weight: normal;
+}
+
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #000000;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgb(11, 11, 11);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgb(255, 255, 255);
+
+  --mermaid-font-family: 'Roboto';
+}
+
+/* semantic color variables for this project (FORCED DARK MODE) */
+:root {
+  /* indicate to browsers that we prefer dark color-scheme */
+  color-scheme: dark;
+
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+
+  --section-gap: 160px;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  color: var(--color-text);
+  font-family: 'Roboto' !important;
+  background-color: black;
+}
+
+.hero {
+  font-family: 'Blue Screen';
+}
+
+p {
+  font-family: 'Forge';
+  opacity: 90%;
+}
+
+h1 {
+  font-family: 'Blue Screen';
+}
+
+h2 {
+  font-family: 'Roboto Condensed';
+}
+
+h3 {
+  font-family: 'Roboto Condensed';
+  font-size: large;
+  font-weight: 200;
+  padding-bottom: 0.25em;
+}
+
+hr {
+  opacity: 60%;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-with-icons {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.not-hyperlink {
+  text-decoration: none;
+}
+
+.help-hyperlink {
+  text-decoration: none;
+}
+
+.help-hyperlink:hover {
+  text-decoration: underline;
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+  margin-bottom: 0.12em;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.spinner-faded {
+  opacity: 75%;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.spinner-faded-normal {
+  opacity: 75%;
+  margin-left: 1em;
+  margin-top: 0.3em;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.middle {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.same-line {
+  display: flex;
+}
+
+.solid {
+  font-family: 'Roboto Black';
+}
+
+.disabled {
+  opacity: 50%;
+}
+
+.no-click {
+  cursor: not-allowed;
+}
+
+.icon-faded {
+  opacity: 40%;
+}
+
+.dependency-icon {
+  height: 2em;
+  margin-right: 1em;
+}
+
+.error-image {
+  height: 15em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spacer {
+  padding-bottom: 0.65em;
+}
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.beta-pill {
+  font-family: 'Roboto Black';
+  background-color: #ffce1b;
+  color: #000000;
+  font-size: 60%;
+  margin-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border-radius: 15px;
+}
+
+.padder {
+  opacity: 0;
+}
+
+.form-group {
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background-color: #8957e5;
+  border-radius: 0.5em;
+  width: fit-content;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 1.5em;
+  padding-left: 1em;
+  color: white;
+}
+
+.error-box {
+  background-color: #e55757;
+  border-radius: 0.5em;
+  width: fit-content;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 1.5em;
+  padding-left: 1em;
+  color: white;
+}
+
+.center-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.code {
+  background-color: #121212;
+  width: fit-content;
+  padding: 0.5em 0.5em 0.5em 1em;
+  border-radius: 0.5em;
+  margin-top: 0.25em;
+  color: var(--color-text);
+}
+
+.copy-button {
+  margin-left: 0.5em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  border-radius: 0.25em;
+}
+
+.info-title {
+  font-family: 'Roboto Flex';
+  text-transform: uppercase;
+  font-weight: 800;
+  font-stretch: 200%;
+  font-optical-sizing: auto;
+}
+
+.pre-formatted {
+  white-space: pre;
+}
+.pre-formatted ul,
+.pre-formatted ol {
+  white-space: normal;
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+.pre-formatted ol {
+  list-style-type: decimal;
+}
+
+.pre-formatted {
+  white-space: pre;
+}
+
+.dot {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  vertical-align: middle;
+}

@@ -1,0 +1,45 @@
+{
+  "name": "jamie-wright",
+  "version": "2.0.1",
+  "private": true,
+  "type": "module",
+  "homepage": "https://the-wright-jamie.dev/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-pattern .gitignore",
+    "format": "prettier --write src/",
+    "deploy": "bun run build; gh-pages -d dist"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.23",
+    "chart.js": "^4.4.8",
+    "endent": "^2.1.0",
+    "fuse.js": "^7.1.0",
+    "vue": "^3.5.13",
+    "vue-mermaid-string": "^7.0.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.10.5",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "24.1.0",
+    "@vitejs/plugin-vue": "6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.4.0",
+    "@vue/tsconfig": "^0.8.1",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "7.0.5",
+    "vite-plugin-checker": "0.11.0",
+    "vue-tsc": "3.0.3"
+  }
+}
