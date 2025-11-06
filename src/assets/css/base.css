@@ -11,9 +11,9 @@
 */
 
 @font-face {
-  font-family: 'Material Symbols Rounded';
+  font-family: 'Pixelify';
   font-style: normal;
-  src: url(../fonts/material-symbols-rounded.ttf);
+  src: url(../fonts/pixelify.ttf);
 }
 
 @font-face {
@@ -35,33 +35,9 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Share Tech Mono';
   font-style: normal;
-  src: url(../fonts/Roboto-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  src: url(../fonts/Roboto-Flex.ttf);
-}
-
-@font-face {
-  font-family: 'Roboto Black';
-  font-style: normal;
-  src: url(../fonts/Roboto-Black.ttf);
-}
-
-@font-face {
-  font-family: 'Roboto Thin';
-  font-style: normal;
-  src: url(../fonts/Roboto-Thin.ttf);
-}
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  src: url(../fonts/RobotoCondensed-VariableFont_wght.ttf);
+  src: url(../fonts/sharetech.ttf);
 }
 
 b {
@@ -122,25 +98,30 @@ body {
 }
 
 .hero {
-  font-family: 'Blue Screen';
+  font-family: Pixelify;
 }
 
-.navlink {
+.nav-link {
   font-family: 'Forge' !important;
   opacity: 90%;
 }
 
 p {
-  font-family: 'Forge';
+  font-family: Pixelify;
   opacity: 90%;
 }
 
-h1 {
-  font-family: 'Blue Screen';
+.header {
+  font-family: 'Forge';
 }
 
+.header::before {
+  content: '#> ';
+}
+
+h1,
 h2 {
-  font-family: 'Roboto Condensed';
+  font-family: Pixelify;
 }
 
 h3 {

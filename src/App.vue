@@ -1,7 +1,7 @@
 <template>
   <BackgroundShader class="opacity-70" />
   <div class="select-none container">
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-4 header-row">
       <h1 class="text-2xl">
         <router-link to="/">the-wright-jamie</router-link>
       </h1>
@@ -17,8 +17,9 @@
       </transition>
     </div>
   </div>
-  <div class="content-area select-none" :class="{ xsfs: isXSFS }">
-    <router-view v-slot="{ Component }">
+  <div class="content-area select-none min-h-screen">
+    <div class="xsfs-overlay" :class="{ active: isXSFS }" aria-hidden="true"></div>
+    <router-view v-slot="{ Component }" class="container">
       <transition name="fade" mode="out-in">
         <component :is="Component" :key="routeKey" />
       </transition>
@@ -71,13 +72,26 @@ const isXSFS = computed(
   z-index: 20;
   background: transparent;
 }
-.content-area.xsfs {
-  background: RGBA(232, 7, 7, 0.5);
+
+/* xsfs overlay: sits between shader and content, fades in to give a smooth background transition */
+.xsfs-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* sit above routed content to cover it, but below the header */
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%);
-  color: #fff;
+  opacity: 0;
+  transition: opacity 350ms ease;
+  pointer-events: none;
 }
-.content-area.xsfs a {
-  color: #fff;
+.xsfs-overlay.active {
+  opacity: 1;
+  transition: opacity 350ms ease;
+}
+
+/* optional: dim the shader when xsfs is active (if you prefer to dim rather than fully cover) */
+.shader-dim {
+  filter: brightness(0.35) saturate(0.8);
+  transition: filter 350ms ease;
 }
 
 /* header fades in halfway through the page fade (page fade = 200ms, header delay = 100ms) */
@@ -116,5 +130,11 @@ const isXSFS = computed(
 }
 .nav-link.router-link-active:hover {
   transform: translateY(12px); /* don't change when hovering an active link */
+}
+
+/* ensure header is above overlay so shader shows through behind it */
+.header-row {
+  position: relative;
+  z-index: 40;
 }
 </style>

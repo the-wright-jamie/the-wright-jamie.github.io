@@ -1,3 +1,4 @@
+import Attributions from '@/views/Attributions.vue'
 import Contact from '@/views/Contact.vue'
 import Home from '@/views/Home.vue'
 import Project from '@/views/Project.vue'
@@ -16,6 +17,7 @@ const routes = [
   { path: '/socials', name: 'socials', component: Socials },
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/xsfs', name: 'xsfs', component: XSFS },
+  { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/project/:id', name: 'project', component: Project, props: true }
 ]
 
