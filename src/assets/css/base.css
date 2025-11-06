@@ -125,6 +125,11 @@ body {
   font-family: 'Blue Screen';
 }
 
+.navlink {
+  font-family: 'Forge' !important;
+  opacity: 90%;
+}
+
 p {
   font-family: 'Forge';
   opacity: 90%;
