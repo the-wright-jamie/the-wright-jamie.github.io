@@ -1,28 +1,28 @@
 <template>
   <BackgroundShader class="opacity-70" />
-  <div id="app">
-    <div class="select-none">
-      <div class="grid grid-cols-4">
-        <h1 class="text-2xl">
-          <router-link to="/">the-wright-jamie</router-link>
-        </h1>
-        <transition name="header-fade" class="col-span-3">
-          <div class="flex w-full items-end justify-evenly text-lg" v-if="showHeader">
-            <p><router-link class="nav-link" to="/whoami">Who am I?</router-link></p>
-            <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
-            <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
-            <p><router-link class="nav-link" to="/socials">Socials</router-link></p>
-            <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
-            <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
-          </div>
-        </transition>
-      </div>
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" :key="routeKey" />
-        </transition>
-      </router-view>
+  <div class="select-none container">
+    <div class="grid grid-cols-4">
+      <h1 class="text-2xl">
+        <router-link to="/">the-wright-jamie</router-link>
+      </h1>
+      <transition name="header-fade" class="col-span-3">
+        <div class="flex w-full items-end justify-evenly text-lg" v-if="showHeader">
+          <p><router-link class="nav-link" to="/whoami">Who am I?</router-link></p>
+          <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
+          <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
+          <p><router-link class="nav-link" to="/socials">Socials</router-link></p>
+          <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
+          <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
+        </div>
+      </transition>
     </div>
+  </div>
+  <div class="content-area select-none" :class="{ xsfs: isXSFS }">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" :key="routeKey" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -38,6 +38,9 @@ const showHeader = computed(() => {
   // hide header on home route (exact '/'), show elsewhere
   return route.path !== '/'
 })
+const isXSFS = computed(
+  () => route.path === '/xsfs' || (route.name && String(route.name) === 'xsfs')
+)
 </script>
 
 <style>
@@ -60,6 +63,21 @@ const showHeader = computed(() => {
 #app {
   position: relative;
   z-index: 0;
+}
+
+/* content area normally transparent; on xsfs it becomes black with a top gradient */
+.content-area {
+  position: relative;
+  z-index: 20;
+  background: transparent;
+}
+.content-area.xsfs {
+  background: RGBA(232, 7, 7, 0.5);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%);
+  color: #fff;
+}
+.content-area.xsfs a {
+  color: #fff;
 }
 
 /* header fades in halfway through the page fade (page fade = 200ms, header delay = 100ms) */
