@@ -1,5 +1,9 @@
 // Fractal noise fragment shader (ported and documented from Godot shader)
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
 precision mediump float;
+#endif
 
 varying vec2 v_uv;
 
@@ -37,6 +41,21 @@ float valueNoise(vec2 p) {
   float v = mix(ix0, ix1, local.y);
   return v * v;
 }
+
+// float fractalBrownianMotion(vec2 p, float t) {
+//   float accum = 0.0;
+//   float amp = 0.5;
+//   mat2 M = transformMatrix;
+//   // fewer octaves (4) - cheaper and more robust on mediump
+//   for (int i = 0; i < 4; ++i) {
+//     accum += amp * valueNoise(p + vec2(t * float(i) * 0.1));
+//     p = M * p * 2.0;
+//     amp *= 0.5;
+//     // keep p in a safe range to avoid precision blowup
+//     p = fract(p * 0.0625) * 16.0 - 8.0;
+//   }
+//   return accum;
+// }
 
 float fractalBrownianMotion(vec2 p, float t) {
   float accum = 0.0;

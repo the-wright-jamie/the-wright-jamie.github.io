@@ -14,9 +14,9 @@ let u_color_low, u_color_mid, u_color_high
 
 const defaults = {
   speed: 0.05,
-  pixelation: 10.0,
-  zoom: 2.0,
-  gradient_pixelation: 0.05,
+  pixelation: 4.0,
+  zoom: 4.0,
+  gradient_pixelation: 0.1,
   background_threshold: 0.0,
   color_low_threshold: 0.24,
   color_mid_threshold: 0.48,
@@ -90,7 +90,11 @@ function setColorUniform(loc, hex) {
 }
 
 function resizeCanvas() {
-  const devicePixelRatio = Math.max(1, window.devicePixelRatio || 1)
+  // clamp DPR on low-end devices to reduce fragment workload
+  const rawDPR = Math.max(1, window.devicePixelRatio || 1)
+  const maxDPR = 1.0 // set 1.0 or 1.5 depending on look/perf tradeoff
+  const devicePixelRatio = Math.min(rawDPR, maxDPR)
+
   const displayWidth = Math.floor(canvas.clientWidth * devicePixelRatio)
   const displayHeight = Math.floor(canvas.clientHeight * devicePixelRatio)
   if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
@@ -153,7 +157,7 @@ export async function init(canvasId = 'noiseCanvas') {
   canvas = document.getElementById(canvasId)
   if (!canvas) throw new Error(`Canvas element with id ${canvasId} not found`)
 
-  gl = canvas.getContext('webgl')
+  gl = canvas.getContext('webgl2') || canvas.getContext('webgl')
   if (!gl) throw new Error('WebGL not supported')
 
   try {

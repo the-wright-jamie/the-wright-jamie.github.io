@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
+import Markdown from 'vite-plugin-md'
 
 // Read version from package.json
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf-8'))
@@ -10,7 +11,12 @@ const appVersion = pkg.version
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/] // allow .md as Vue SFC
+    }),
+    Markdown({
+      frontmatter: true // exports frontmatter
+    }),
     checker({
       typescript: true,
       vueTsc: {

@@ -1,23 +1,27 @@
 <template>
   <BackgroundShader class="opacity-70" />
   <div class="select-none container">
-    <div class="grid grid-cols-4 header-row">
-      <h1 class="text-2xl">
+    <div class="grid lg:grid-cols-4 grid-cols-1 text-center lg:text-left header-row">
+      <h1 class="text-2xl homelink">
         <router-link to="/">the-wright-jamie</router-link>
       </h1>
-      <transition name="header-fade" class="col-span-3">
-        <div class="flex w-full items-end justify-evenly text-lg" v-if="showHeader">
-          <p><router-link class="nav-link" to="/whoami">Who am I?</router-link></p>
-          <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
-          <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
-          <p><router-link class="nav-link" to="/socials">Socials</router-link></p>
-          <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
-          <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
-        </div>
-      </transition>
+      <div
+        class="grid w-full items-end text-center lg:justify-center text-lg lg:grid-cols-6 grid-cols-2 gap-6 lg:pt-0 pt-12 links col-span-3"
+        :aria-hidden="!showHeader"
+        :class="{ 'nav-hidden': !showHeader }"
+      >
+        <p>
+          <router-link class="nav-link text-nowrap" to="/whoami">Who am I?</router-link>
+        </p>
+        <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
+        <p><router-link class="nav-link" to="/services">Services</router-link></p>
+        <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
+        <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
+        <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
+      </div>
     </div>
   </div>
-  <div class="content-area select-none min-h-screen">
+  <div class="content-area select-none">
     <div class="xsfs-overlay" :class="{ active: isXSFS }" aria-hidden="true"></div>
     <router-view v-slot="{ Component }" class="container">
       <transition name="fade" mode="out-in">
@@ -136,5 +140,25 @@ const isXSFS = computed(
 .header-row {
   position: relative;
   z-index: 40;
+}
+
+.links {
+  min-height: 3rem;
+  margin-top: -2em;
+}
+
+.homelink {
+  z-index: 50;
+}
+
+.header-row .grid[aria-hidden='true'] {
+  pointer-events: none;
+  /* allow fade by animating opacity instead of using visibility */
+  opacity: 0;
+  transition: opacity 200ms ease 100ms;
+}
+.header-row .grid[aria-hidden='false'] {
+  opacity: 1;
+  transition: opacity 200ms ease;
 }
 </style>

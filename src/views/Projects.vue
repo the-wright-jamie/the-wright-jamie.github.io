@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1 class="text-4xl mb-4 header">cd ~/projects</h1>
+    <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/projects</h1>
     <div class="text-lg">
       <br />
-      <h1 class="cover-heading">Projects & Experience</h1>
       <p style="opacity: 0.6">Table of contents</p>
 
       <div class="list-group" data-bs-theme="dark">
@@ -11,7 +10,7 @@
           href="#projects"
           style="font-weight: normal"
           class="list-group-item list-group-item-action"
-          >Projects I've Worked On</a
+          >Professional</a
         >
         <a href="#kainos" style="font-weight: normal" class="list-group-item list-group-item-action"
           >Time at Kainos</a

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-4xl mb-4 header">showcase --all</h1>
+    <h1 class="lg:text-4xl text-xl mb-4 header">showcase --all</h1>
     <p class="text-lg"></p>
   </div>
 </template>

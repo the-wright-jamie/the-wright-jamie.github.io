@@ -13,11 +13,23 @@
     </p>
     <br />
     <p class="text-center">Thank you for your interest, please check back in the future</p>
+    <ul>
+      <li v-for="post in posts" :key="post.path">
+        <router-link :to="post.path">{{ post.meta.title || post.slug }}</router-link>
+        <small>{{ post.meta.date }}</small>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script setup>
-// placeholder
+const modules = import.meta.glob('../blog/*.md', { eager: true })
+const posts = Object.entries(modules)
+  .map(([p, m]) => {
+    const slug = p.split('/').pop().replace(/\.md$/, '')
+    return { slug, path: `/xsfs/${slug}`, meta: m.frontmatter || {} }
+  })
+  .sort((a, b) => (b.meta.date || '').localeCompare(a.meta.date || ''))
 </script>
 
 <style scoped>
