@@ -20,8 +20,8 @@ const defaults = {
   background_threshold: 0.0,
   color_low_threshold: 0.24,
   color_mid_threshold: 0.48,
-  color_low: '#575757',
-  color_mid: '#9c9c9c',
+  color_low: localStorage.getItem('shader-low') || '#575757',
+  color_mid: localStorage.getItem('shader-mid') || '#9c9c9c',
   color_high: '#000000'
 }
 
@@ -185,4 +185,25 @@ export function destroy() {
   gl = null
   canvas = null
   init._initialized = false
+}
+
+// runtime setters: allow updating the low/mid colors from the app
+export function setColorLow(hex) {
+  if (!hex) return
+  defaults.color_low = hex
+  try {
+    if (gl && u_color_low) setColorUniform(u_color_low, hex)
+  } catch (e) {
+    // ignore if not ready
+  }
+}
+
+export function setColorMid(hex) {
+  if (!hex) return
+  defaults.color_mid = hex
+  try {
+    if (gl && u_color_mid) setColorUniform(u_color_mid, hex)
+  } catch (e) {
+    // ignore if not ready
+  }
 }

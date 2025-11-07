@@ -1,6 +1,14 @@
 <template>
   <BackgroundShader class="opacity-70" />
-  <div class="select-none container">
+  <button
+    class="cursor-pointer return"
+    @click="((forcedHideNav = false), router.push('/'))"
+    aria-label="Restore navigation"
+    v-if="forcedHideNav"
+  >
+    <h1 class="text-5xl p-6">X</h1>
+  </button>
+  <div v-if="!forcedHideNav" class="select-none container">
     <div class="grid lg:grid-cols-4 grid-cols-1 text-center lg:text-left header-row">
       <h1 class="text-2xl homelink">
         <router-link to="/">the-wright-jamie</router-link>
@@ -39,15 +47,35 @@
 <script setup>
 import BackgroundShader from '@/components/BackgroundShader.vue'
 // Removed pageVisible import as it is no longer used
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import router from './router'
 
 const route = useRoute()
 const routeKey = computed(() => route.fullPath)
+
+const forcedHideNav = ref(false)
+const showRestore = ref(false)
 const showHeader = computed(() => {
   // hide header on home route (exact '/'), show elsewhere
+  // also allow a forced hide from other views (e.g., Watch)
+  if (forcedHideNav.value) return false
   return route.path !== '/'
 })
+
+function onToggleNav(ev) {
+  // event detail: { hide: boolean }
+  if (ev && ev.detail && typeof ev.detail.hide === 'boolean') forcedHideNav.value = ev.detail.hide
+}
+
+onMounted(() => {
+  window.addEventListener('toggle-nav-visibility', onToggleNav)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('toggle-nav-visibility', onToggleNav)
+})
+
 const isXSFS = computed(() => route.path.includes('/xsfs'))
 
 // delayed active state: stays true until overlay transition finishes to avoid layout jumps
@@ -146,6 +174,22 @@ onBeforeUnmount(() => {
   transition: opacity 350ms ease;
 }
 
+.return {
+  opacity: 0;
+
+  transition: opacity 100ms ease;
+}
+
+button {
+  font-family: 'Forge';
+  cursor: pointer;
+}
+
+.return:hover {
+  opacity: 1;
+  transition: opacity 100ms ease;
+}
+
 /* optional: dim the shader when xsfs is active (if you prefer to dim rather than fully cover) */
 .shader-dim {
   filter: brightness(0.35) saturate(0.8);
@@ -214,5 +258,32 @@ onBeforeUnmount(() => {
 .header-row .grid[aria-hidden='false'] {
   opacity: 1;
   transition: opacity 200ms ease;
+}
+
+/* hide nav/homelink when forced hidden */
+.nav-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.homelink.nav-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* restore hotspot in top-left */
+.restore-hotspot {
+  position: fixed;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 60;
+}
+.restore-btn {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0.95;
 }
 </style>
