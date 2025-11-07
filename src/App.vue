@@ -9,12 +9,13 @@
     <h1 class="text-5xl p-6">X</h1>
   </button>
   <div v-if="!forcedHideNav" class="select-none sm:mx-4 sm:my-4">
-    <div class="flex lg:text-left header-row">
-      <h1 class="text-2xl homelink text-nowrap">
+    <!-- stack on small (centered title above), row on large -->
+    <div class="flex flex-col lg:flex-row items-center lg:items-end header-row">
+      <h1 class="text-2xl homelink text-nowrap w-full text-center lg:text-left lg:w-auto">
         <router-link to="/">the-wright-jamie</router-link>
       </h1>
       <div
-        class="grid w-full items-end text-center lg:justify-center text-lg lg:grid-cols-6 grid-cols-2 gap-6 lg:pt-0 pt-12 links col-span-3"
+        class="grid w-full items-end text-center lg:justify-center text-lg lg:grid-cols-6 grid-cols-2 gap-6 lg:pt-0 pt-4 mt-4 lg:mt-0 links"
         :aria-hidden="!showHeader"
         :class="{ 'nav-hidden': !showHeader }"
       >
@@ -36,10 +37,13 @@
       :class="{ active: isXSFS }"
       aria-hidden="true"
     ></div>
-    <router-view v-slot="{ Component }" class="container">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" :key="routeKey" />
-      </transition>
+    <router-view v-slot="{ Component }">
+      <!-- responsive inner container: smaller side padding on mobile, larger on desktop -->
+      <div class="px-5 pt-8 pb-8 md:px-6 lg:px-12 max-w-screen-xl mx-auto">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" :key="routeKey" />
+        </transition>
+      </div>
     </router-view>
   </div>
 </template>
@@ -240,9 +244,33 @@ button {
   z-index: 40;
 }
 
+.header-row {
+  position: relative;
+  z-index: 40;
+  padding-top: 0.75rem; /* give breathing room on small screens */
+}
+
+.homelink {
+  z-index: 50;
+  margin-bottom: 0.5rem; /* separate title from nav on small screens */
+}
+
 .links {
   min-height: 3rem;
-  margin-top: -2em;
+  margin-top: 0; /* avoid overlapping the title on small screens */
+}
+
+/* preserve the original tighter overlap on large screens if desired */
+@media (min-width: 1024px) {
+  .links {
+    margin-top: -2em;
+  }
+  .header-row {
+    padding-top: 0; /* desktop original spacing */
+  }
+  .homelink {
+    margin-bottom: 0; /* line up with desktop layout */
+  }
 }
 
 .homelink {
