@@ -5,6 +5,7 @@ import Project from '@/views/Project.vue'
 import Projects from '@/views/Projects.vue'
 import Services from '@/views/Services.vue'
 import Showcase from '@/views/Showcase.vue'
+import Watch from '@/views/Watch.vue'
 import WhoAmI from '@/views/WhoAmI.vue'
 import XSFS from '@/views/XSFS.vue'
 import type { RouteRecordRaw } from 'vue-router'
@@ -33,6 +34,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/services', name: 'services', component: Services },
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
+  { path: '/watch', name: 'watch', component: Watch },
   { path: '/project/:id', name: 'project', component: Project, props: true },
   {
     path: '/xsfs',

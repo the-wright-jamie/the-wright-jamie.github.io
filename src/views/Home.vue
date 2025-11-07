@@ -19,7 +19,7 @@
       <br />
       <div class="flex w-full items-end justify-evenly text-xs gap-5">
         <p><router-link class="nav-link" to="/attributions">About this website</router-link></p>
-        <p><router-link class="nav-link" to="/attributions">Watch the background</router-link></p>
+        <p><router-link class="nav-link" to="/watch">Watch the background</router-link></p>
       </div>
     </div>
   </div>

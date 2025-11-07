@@ -22,7 +22,7 @@ Don't believe that this is your real IP address? <https://whatismyipaddress.com/
 Of course, if you're using a VPN, this won't be your IP address but an IP address belonging to the VPN
 
 But when we send this image into a Discord server, we get this:
-![Discord Image](https://xsfs.xyz/assets/img/2023/discord-bait.png)
+![Discord Image](../assets/img/xsfs/bait-and-switch/discord-bait.png)
 
 ## How does this work?
 
@@ -55,13 +55,13 @@ If the caching server retrieves the image on the user's behalf, the IP address t
 
 So, instead, we need to detect if a data centre is accessing our image and if it is, give the data centre the bait to display instead as this is what will be displayed to the user in Discord. And remember, the end goal is to get the user to open the image in the browser so we can lift the user's actual IP address.
 
-![Connections Diagram](https://xsfs.xyz/assets/img/2023/discord-bait-graphic.png)
+![Connections Diagram](../assets/img/xsfs/bait-and-switch/discord-bait-graphic.png)
 
 ## Why is Discord like this?
 
 It's anyone's guess why Discord does it like this. However, we could probably relate it to the Information Security CIA Triad:
 
-![CIA Triad](https://xsfs.xyz/assets/img/2023/cia-triad.svg)
+![CIA Triad](../assets/img/xsfs/bait-and-switch/cia-triad.svg)
 
 1. **Confidentiality**: Preventing people like me from doing something like this easily as someone could easily collect a large amount of real user IP addresses this way if there was no cache/proxy and no one could stop us
 2. **Integrity**: make sure it doesn't change - it's the same as when it was posted (although this doesn't entirely line up as the image is cached when it's loaded on the client's side and not when the actor posts it, it also occasionally updates it's cache too)
