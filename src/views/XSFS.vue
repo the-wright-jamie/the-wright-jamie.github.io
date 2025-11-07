@@ -6,30 +6,29 @@
     >
       <p class="text-lg">eXtra Space For Stuff</p>
     </div>
-    <p>
-      When I get round to it, my blog will be here. This space will contain source code (or links to
-      it). It will be a place for me to share thoughts and non-academic research into software and
-      security. In the future, I may also share miscellaneous projects and demos here.
-    </p>
-    <br />
-    <p class="text-center">Thank you for your interest, please check back in the future</p>
-    <ul>
-      <li v-for="post in posts" :key="post.path">
-        <router-link :to="post.path">{{ post.meta.title || post.slug }}</router-link>
-        <small>{{ post.meta.date }}</small>
-      </li>
-    </ul>
+    <!-- layout-only: index content lives in XSFSIndex.vue; posts render here -->
+    <div class="mt-8 post-area">
+      <div class="mb-4" v-if="showBack">
+        <button
+          @click="$router.back()"
+          class="px-3 py-1 rounded bg-gray-800 text-white hover:bg-green-600 transition"
+          aria-label="Go back"
+        >
+          ← Back
+        </button>
+      </div>
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script setup>
-const modules = import.meta.glob('../blog/*.md', { eager: true })
-const posts = Object.entries(modules)
-  .map(([p, m]) => {
-    const slug = p.split('/').pop().replace(/\.md$/, '')
-    return { slug, path: `/xsfs/${slug}`, meta: m.frontmatter || {} }
-  })
-  .sort((a, b) => (b.meta.date || '').localeCompare(a.meta.date || ''))
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+// show the back button only when a child route (post) is active
+const showBack = computed(() => route.path !== '/xsfs')
 </script>
 
 <style scoped>
@@ -118,5 +117,48 @@ figcaption {
 span {
   vertical-align: middle;
   padding-bottom: 0.5%;
+}
+
+/* style the rendered markdown inside this component using deep selector.
+   adjust sizing / colors to taste. */
+::v-deep .markdown-body {
+  max-width: 70ch;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  line-height: 1.7;
+  color: #e6e6e6;
+}
+
+::v-deep .markdown-body h1,
+::v-deep .markdown-body h2,
+::v-deep .markdown-body h3 {
+  color: #4aaf37; /* keep the green header style for blog posts */
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+::v-deep .markdown-body p {
+  margin: 0.6rem 0;
+}
+
+::v-deep .markdown-body pre {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  margin: 1rem 0;
+}
+::v-deep .markdown-body code {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+
+::v-deep .markdown-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
 }
 </style>

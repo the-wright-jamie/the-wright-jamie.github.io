@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="content-area select-none">
+  <div class="content-area select-none" :class="{ 'min-h-screen': isXSFS }">
     <div class="xsfs-overlay" :class="{ active: isXSFS }" aria-hidden="true"></div>
     <router-view v-slot="{ Component }" class="container">
       <transition name="fade" mode="out-in">
@@ -43,9 +43,7 @@ const showHeader = computed(() => {
   // hide header on home route (exact '/'), show elsewhere
   return route.path !== '/'
 })
-const isXSFS = computed(
-  () => route.path === '/xsfs' || (route.name && String(route.name) === 'xsfs')
-)
+const isXSFS = computed(() => route.path.includes('/xsfs'))
 </script>
 
 <style>

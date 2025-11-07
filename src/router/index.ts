@@ -6,6 +6,8 @@ import Projects from '@/views/Projects.vue'
 import Services from '@/views/Services.vue'
 import Showcase from '@/views/Showcase.vue'
 import WhoAmI from '@/views/WhoAmI.vue'
+import XSFS from '@/views/XSFS.vue'
+import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const blogModules = (import.meta as any).glob('../blog/*.md', { eager: true })
@@ -15,14 +17,15 @@ const blogRoutes = Object.entries(blogModules).map(([path, mod]: [string, any]) 
   const slug = path.split('/').pop().replace(/\.md$/, '')
   console.log(`Registered blog post: ${slug}`)
   return {
-    path: `/xsfs/${slug}`,
-    name: `${slug}`,
-    component: (mod as any).default, // a Vue component compiled from markdown
+    // child route under /xsfs
+    path: `${slug}`,
+    name: `xsfs-${slug}`,
+    component: (mod as any).default,
     meta: (mod as any).frontmatter || {}
   }
 })
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home', component: Home },
   { path: '/whoami', name: 'whoami', component: WhoAmI },
   { path: '/projects', name: 'projects', component: Projects },
@@ -31,8 +34,14 @@ const routes = [
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/project/:id', name: 'project', component: Project, props: true },
-  { path: '/xsfs', component: () => import('@/views/XSFS.vue') },
-  ...blogRoutes
+  {
+    path: '/xsfs',
+    component: XSFS,
+    children: [
+      { path: '', name: 'xsfs-index', component: () => import('@/views/XSFSIndex.vue') },
+      ...blogRoutes
+    ]
+  }
 ]
 
 const router = createRouter({
