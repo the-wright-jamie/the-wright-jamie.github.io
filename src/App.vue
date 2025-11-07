@@ -8,9 +8,9 @@
   >
     <h1 class="text-5xl p-6">X</h1>
   </button>
-  <div v-if="!forcedHideNav" class="select-none container">
-    <div class="grid lg:grid-cols-4 grid-cols-1 text-center lg:text-left header-row">
-      <h1 class="text-2xl homelink">
+  <div v-if="!forcedHideNav" class="select-none sm:mx-4 sm:my-4">
+    <div class="flex lg:text-left header-row">
+      <h1 class="text-2xl homelink text-nowrap">
         <router-link to="/">the-wright-jamie</router-link>
       </h1>
       <div

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-4xl mb-4 header">systemctl status</h1>
+    <h1 class="lg:text-4xl text-xl mb-4 header text-nowrap">systemctl status</h1>
     <p class="text-lg">Work in progress, check back later ;)</p>
     <div class="grid place-items-center">
       <div class="flex place-items-center gap-6">
