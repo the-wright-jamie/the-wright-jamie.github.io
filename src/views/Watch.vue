@@ -19,11 +19,28 @@
 <script setup>
 import { setColorLow, setColorMid } from '@/assets/ts/shaderBackground'
 import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
-const lowColor = ref('#575757')
-const midColor = ref('#9c9c9c')
+const lowColor = ref('#8e1f1f')
+const midColor = ref('#000000')
 const controlsHidden = ref(false)
 
+// read the route query so we can autoboot hidden when ?hide=true or ?hide=1
+const route = useRoute()
+watch(
+  () => route.query.hide,
+  (val) => {
+    const shouldHide = typeof val === 'string' ? val === 'true' || val === '1' : Boolean(val)
+    if (shouldHide) {
+      controlsHidden.value = true
+      // notify App to hide the site header/nav
+      const ev = new CustomEvent('toggle-nav-visibility', { detail: { hide: true } })
+      window.dispatchEvent(ev)
+    }
+  },
+  { immediate: true }
+)
+// * NICE COLOUR #911818
 // load persisted colors
 try {
   const l = localStorage.getItem('shader-low')
@@ -61,8 +78,8 @@ function toggleNav() {
 }
 
 function resetColors() {
-  lowColor.value = '#575757'
-  midColor.value = '#9c9c9c'
+  lowColor.value = '#8e1f1f'
+  midColor.value = '#000000'
   try {
     setColorLow(lowColor.value)
     setColorMid(midColor.value)

@@ -20,10 +20,14 @@ const defaults = {
   background_threshold: 0.0,
   color_low_threshold: 0.24,
   color_mid_threshold: 0.48,
-  color_low: localStorage.getItem('shader-low') || '#575757',
-  color_mid: localStorage.getItem('shader-mid') || '#9c9c9c',
+  color_low: localStorage.getItem('shader-low') || '#8e1f1f',
+  color_mid: localStorage.getItem('shader-mid') || '#000000',
   color_high: '#000000'
 }
+
+// ORIGINAL COLOURS
+// LOW: #575757
+// MID: #9c9c9c
 
 function hexToRgba(hex) {
   if (!hex) return [0, 0, 0, 0]
