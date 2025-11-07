@@ -8,17 +8,16 @@
         sand how to think, to compute, and to connect with other supercharged rocks across the
         globe.
       </p>
-      <p class="italic tracking-widest font-extrabold">And the world was never the same again.</p>
+      <p class="italic tracking-[.25em] font-extrabold">And the world was never the same again.</p>
       <p class="italic">
-        Some call it magic. Others call it science. All I know is that I command these rocks for a
-        living.
+        Today, apprentices of this new order refer to themselves as 'software engineers'...
       </p>
       <hr />
       <h2 class="text-2xl">Hi, I'm Jamie</h2>
       <p>
-        PLACEHOLDER. I'm a software engineer based in the UK. I specialise in building web
-        applications and services using modern technologies. I have a passion for creating
-        efficient, scalable, and user-friendly solutions that solve real-world problems.
+        I'm a security and software engineer from Northern Ireland.</p>
+
+<p>By light, I help to ensure the security of the project I oversee by building tooling, monitoring infrastructure and security testing. By night, I build web applications. On the side, I have various creative pursuits of which include: game making, language learning and general knowledge acquisition.
       </p>
     </div>
   </div>
