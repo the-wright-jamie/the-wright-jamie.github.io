@@ -59,12 +59,11 @@ const route = useRoute()
 const routeKey = computed(() => route.fullPath)
 
 const forcedHideNav = ref(false)
-const showRestore = ref(false)
 const showHeader = computed(() => {
-  // hide header on home route (exact '/'), show elsewhere
-  // also allow a forced hide from other views (e.g., Watch)
+  // hide header on home route (exact '/'), on watch route (and its subroutes), or when forced hidden
   if (forcedHideNav.value) return false
-  return route.path !== '/'
+  if (route.path === '/' || route.path.startsWith('/watch')) return false
+  return true
 })
 
 function onToggleNav(ev) {
