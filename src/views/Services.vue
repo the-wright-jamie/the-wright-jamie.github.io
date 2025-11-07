@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="text-4xl mb-4 header">systemctl status</h1>
+    <p class="text-lg">Work in progress, check back later ;)</p>
     <div class="grid place-items-center">
       <div class="flex place-items-center gap-6">
         <img src="./../assets/img/w-software.png" class="h-30" />

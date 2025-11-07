@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/projects</h1>
-    <div class="text-lg">
+    <p class="text-lg">Work in progress, check back later ;)</p>
+    <!--<div class="text-lg">
       <br />
       <p style="opacity: 0.6">Table of contents</p>
 
@@ -38,7 +39,7 @@
 
       <div class="row">
         <div class="col-sm-4">
-          <p style="font-size: 30mm"><img src="" width="120" height="120" />--></p>
+          <p style="font-size: 30mm"><img src="" width="120" height="120" /></p>
           <p class="center">Get Outside</p>
           <p style="opacity: 0.6">2022 - 2023</p>
         </div>
@@ -299,7 +300,7 @@
       <a href="#top" style="font-size: 5mm">Back to top</a>
       <p></p>
       <hr size="5" style="color: white" />
-    </div>
+    </div>-->
   </div>
 </template>
 

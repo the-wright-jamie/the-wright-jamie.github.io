@@ -1,0 +1,171 @@
+h1 {
+  color: #4aaf37;
+  text-shadow: 0 0 15px green;
+  font-family: 'Forge';
+}
+
+h1::before {
+  content: '#> ';
+}
+
+a {
+  font-family: 'Pixelify';
+  font-size: 1.1em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: gray;
+}
+
+/* mouse over link */
+a:hover {
+  color: #4aaf37;
+  text-shadow: 0 0 15px #4aaf37;
+}
+
+/* selected link */
+a:active {
+  color: green;
+  text-shadow: 0 0 15px green;
+}
+
+.brand {
+  max-width: 5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code {
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  border-radius: 0.35em;
+  background-color: #333333;
+  color: white;
+}
+
+img:not(.footer-img) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.footer {
+  font-size: 0.8em;
+}
+
+#demos-target,
+#thoughts-target,
+#misc-target {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-success {
+  filter: drop-shadow(0 0 5px green);
+}
+
+span {
+  vertical-align: middle;
+  padding-bottom: 0.5%;
+}
+
+small {
+  font-family: 'Pixelify';
+}
+
+/* style the rendered markdown inside this component using deep selector.
+   adjust sizing / colors to taste. */
+:deep(.markdown-body) {
+  max-width: 70ch;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  line-height: 1.7;
+  color: #e6e6e6;
+}
+
+:deep(.markdown-body) h1,
+:deep(.markdown-body) h2,
+:deep(.markdown-body) h3 {
+  color: #4aaf37;
+  text-shadow: 0 0 15px green;
+  font-family: 'Forge';
+}
+
+:deep(.markdown-body) h1 {
+  font-size: 1.5em;
+}
+
+:deep(.markdown-body) h2 {
+  font-size: 1.25em;
+  padding-top: 1em;
+}
+
+:deep(.markdown-body) h3 {
+  font-size: 1em;
+  padding-top: 1em;
+}
+
+:deep(.markdown-body) p {
+  margin: 0.6rem 0;
+  font-family: 'Pixelify';
+}
+
+:deep(.markdown-body) a {
+  text-decoration: underline;
+}
+
+:deep(.markdown-body) ol {
+  font-family: 'Pixelify';
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding-left: 1em; /* Indents the entire block of text */
+  text-indent: -1em;
+}
+
+:deep(.markdown-body) pre {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  margin: 1rem 0;
+  font-family: 'Pixelify';
+}
+:deep(.markdown-body) code {
+  background: rgb(40, 40, 40);
+  padding: 0.15rem 0.15rem;
+  margin: 0.1em 0.1em;
+  border-radius: 0.25rem;
+  font-family: 'Pixelify';
+  font-size: 0.9em;
+}
+
+:deep(.markdown-body) img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+}

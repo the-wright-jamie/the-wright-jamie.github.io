@@ -21,8 +21,13 @@
       </div>
     </div>
   </div>
-  <div class="content-area select-none" :class="{ 'min-h-screen': isXSFS }">
-    <div class="xsfs-overlay" :class="{ active: isXSFS }" aria-hidden="true"></div>
+  <div class="content-area select-none" :class="{ 'min-h-screen': isXSFSActive }">
+    <div
+      class="xsfs-overlay"
+      ref="xsfsOverlay"
+      :class="{ active: isXSFS }"
+      aria-hidden="true"
+    ></div>
     <router-view v-slot="{ Component }" class="container">
       <transition name="fade" mode="out-in">
         <component :is="Component" :key="routeKey" />
@@ -34,7 +39,7 @@
 <script setup>
 import BackgroundShader from '@/components/BackgroundShader.vue'
 // Removed pageVisible import as it is no longer used
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -44,6 +49,57 @@ const showHeader = computed(() => {
   return route.path !== '/'
 })
 const isXSFS = computed(() => route.path.includes('/xsfs'))
+
+// delayed active state: stays true until overlay transition finishes to avoid layout jumps
+const isXSFSActive = ref(isXSFS.value)
+const xsfsOverlay = ref(null)
+let fallbackTimer = null
+
+watch(isXSFS, (val) => {
+  const el = xsfsOverlay.value
+  const finish = () => {
+    if (fallbackTimer) {
+      clearTimeout(fallbackTimer)
+      fallbackTimer = null
+    }
+    isXSFSActive.value = false
+    if (el) el.removeEventListener('transitionend', onEnd)
+  }
+  const onEnd = (ev) => {
+    if (ev.propertyName === 'opacity' || ev.propertyName === '') finish()
+  }
+
+  if (val) {
+    // entering: set active immediately
+    if (fallbackTimer) {
+      clearTimeout(fallbackTimer)
+      fallbackTimer = null
+    }
+    isXSFSActive.value = true
+  } else {
+    // leaving: wait for overlay to finish fading out
+    if (el) {
+      el.addEventListener('transitionend', onEnd, { once: true })
+      // fallback in case transitionend doesn't fire
+      fallbackTimer = setTimeout(finish, 600)
+    } else {
+      // no element found — fallback
+      fallbackTimer = setTimeout(() => {
+        isXSFSActive.value = false
+        fallbackTimer = null
+      }, 300)
+    }
+  }
+})
+
+onBeforeUnmount(() => {
+  if (fallbackTimer) {
+    clearTimeout(fallbackTimer)
+    fallbackTimer = null
+  }
+  const el = xsfsOverlay.value
+  if (el) el.removeEventListener('transitionend', () => {})
+})
 </script>
 
 <style>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="text-4xl mb-4 header">whoami</h1>
+    <p class="text-lg">Work in progress, check back later ;)</p>
     <div class="text-lg space-y-4">
       <p class="italic">
         Once upon a time, a human being figured out how to imbue rocks with the power of
