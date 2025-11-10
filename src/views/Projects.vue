@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/projects</h1>
-    <p class="text-lg">Work in progress, check back later ;)</p>
-    <!--<div class="text-lg">
+    <p class="">Work in progress, check back later ;)</p>
+    <!--<div class="">
       <br />
       <p style="opacity: 0.6">Table of contents</p>
 

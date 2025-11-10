@@ -32,6 +32,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/projects', name: 'projects', component: Projects },
   { path: '/contact', name: 'contact', component: Contact },
   { path: '/services', name: 'services', component: Services },
+  { path: '/wright-software', name: 'wright-software', component: Services },
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/watch', name: 'watch', component: Watch },
@@ -48,7 +49,14 @@ const routes: RouteRecordRaw[] = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return {
+      top: 0,
+      behavior: 'smooth'
+    }
+  }
 })
 
 export default router

@@ -15,7 +15,7 @@
         <router-link to="/">the-wright-jamie</router-link>
       </h1>
       <div
-        class="grid w-full items-end text-center lg:justify-center text-lg lg:grid-cols-6 grid-cols-2 gap-6 lg:pt-0 pt-4 mt-4 lg:mt-0 links"
+        class="grid w-full items-end text-center lg:justify-center lg:grid-cols-6 grid-cols-2 gap-6 lg:pt-0 pt-4 mt-4 lg:mt-0 links"
         :aria-hidden="!showHeader"
         :class="{ 'nav-hidden': !showHeader }"
       >
@@ -23,8 +23,8 @@
           <router-link class="nav-link text-nowrap" to="/whoami">Who am I?</router-link>
         </p>
         <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
-        <p><router-link class="nav-link" to="/services">Services</router-link></p>
         <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
+        <p><router-link class="nav-link" to="/services">Services</router-link></p>
         <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
         <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
       </div>
@@ -39,7 +39,7 @@
     ></div>
     <router-view v-slot="{ Component }">
       <!-- responsive inner container: smaller side padding on mobile, larger on desktop -->
-      <div class="px-5 pt-8 pb-8 md:px-6 lg:px-12 max-w-screen-xl mx-auto">
+      <div class="px-5 pt-8 pb-8 md:px-6 lg:px-12 max-w-screen-xl mx-auto text-xl">
         <transition name="fade" mode="out-in">
           <component :is="Component" :key="routeKey" />
         </transition>

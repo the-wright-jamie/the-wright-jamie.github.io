@@ -124,6 +124,12 @@ h2 {
   font-family: Pixelify;
 }
 
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: x-large;
+}
+
 h3 {
   font-family: 'Roboto Condensed';
   font-size: large;

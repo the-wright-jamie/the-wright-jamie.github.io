@@ -4,8 +4,8 @@
       <input type="color" v-model="lowColor" aria-label="Low shader color" />
       <input type="color" v-model="midColor" aria-label="Mid shader color" />
 
-      <button class="toggle-nav" @click="toggleNav">Full Screen</button>
-      <button class="" @click="resetColors">Reset colors</button>
+      <button class="toggle-nav" @click="toggleNav">Hide GUI</button>
+      <button @click="resetColors">Reset colors</button>
     </div>
     <p v-show="!controlsHidden">
       If you go full screen, there is a hidden return button in the top left.
@@ -21,7 +21,7 @@ import { setColorLow, setColorMid } from '@/assets/ts/shaderBackground'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-const lowColor = ref('#8e1f1f')
+const lowColor = ref('#465fc7')
 const midColor = ref('#000000')
 const controlsHidden = ref(false)
 
@@ -78,7 +78,7 @@ function toggleNav() {
 }
 
 function resetColors() {
-  lowColor.value = '#8e1f1f'
+  lowColor.value = '#465fc7'
   midColor.value = '#000000'
   try {
     setColorLow(lowColor.value)

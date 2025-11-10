@@ -4,7 +4,7 @@
     <div
       class="py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"
     >
-      <p class="text-lg">eXtra Space For Stuff</p>
+      <p class="">eXtra Space For Stuff</p>
     </div>
     <!-- layout-only: index content lives in XSFSIndex.vue; posts render here -->
     <div class="mt-8 post-area">
