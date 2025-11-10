@@ -17,13 +17,15 @@
         <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
       </div>
       <br />
-      <h2 class="lg:text-8xl text-2xl hero opacity-60 pt-4">This website is a work in progress!</h2>
-      <br />
       <div class="flex w-full items-end justify-evenly text-xs gap-5">
         <p><router-link class="nav-link" to="/attributions">About this website</router-link></p>
         <p><router-link class="nav-link" to="/watch">Watch the background</router-link></p>
       </div>
     </div>
+    <br />
+    <h2 class="lg:text-8xl text-2xl rounded-full text-center beta-pill">
+      This website is a work in progress!
+    </h2>
   </div>
 </template>
 
@@ -47,5 +49,9 @@ function open(id, gistUrl) {
 .the-stuff {
   margin-top: -10em;
   z-index: 60;
+}
+
+h2 {
+  font-family: 'Forge';
 }
 </style>

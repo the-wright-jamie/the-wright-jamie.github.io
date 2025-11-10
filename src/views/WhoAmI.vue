@@ -38,17 +38,18 @@
         acquisition.
       </p>
       <p>
-        I consider myself to be a results-driven engineer. I have 6 years of industry experience in
-        software development, infrastructure management, and security engineering. I have enhanced
-        the security of projects I've worked on by developing custom tooling, monitoring
-        infrastructure on AWS, helping to ensure SOC2 compliance and performing informal penetration
-        testing. I'm a big believer in the idea that 'the impossible just takes a little longer'.
+        Let's get to the brass tacts: What am I about? I consider myself to be a results-driven
+        engineer. I have 6 years of industry experience in software development, infrastructure
+        management, and security engineering. I have enhanced the security of projects I've worked
+        on by developing custom tooling, monitoring infrastructure on AWS, helping to ensure SOC2
+        compliance and performing informal penetration testing. I'm a big believer in the idea that
+        'the impossible just takes a little longer'.
       </p>
       <p>
-        What follows here is a <span class="font-extrabold">subjective recount</span> of my life as
-        it pertains to my interest in technology and my professional career. A more objective, fact
-        based recount of my career can be found at
-        <router-link class="underline" to="/projects">the Projects page</router-link>.
+        What follows here is a <span class="font-extrabold">subjective recount</span> (i.e from my
+        perspective, how I think and feel) of my life as it pertains to my interest in technology
+        and my professional career. A more objective, fact based recount of my career can be found
+        at <router-link class="underline" to="/projects">the Projects page</router-link>.
       </p>
 
       <h2>Professional Career</h2>

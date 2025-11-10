@@ -40,6 +40,12 @@
   src: url(../fonts/sharetech.ttf);
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  src: url(../fonts/roboto.ttf);
+}
+
 b {
   font-family: 'Roboto Condensed';
 }
@@ -255,13 +261,11 @@ hr {
   font-family: 'Roboto Black';
   background-color: #ffce1b;
   color: #000000;
-  font-size: 60%;
   margin-left: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-  border-radius: 15px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
 }
 
 .padder {

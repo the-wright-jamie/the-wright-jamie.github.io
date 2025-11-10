@@ -31,14 +31,13 @@
     </div>
   </div>
   <div class="content-area select-none" :class="{ 'min-h-screen': isXSFSActive }">
-    <div
-      class="xsfs-overlay"
-      ref="xsfsOverlay"
-      :class="{ active: isXSFS }"
-      aria-hidden="true"
-    ></div>
+    <div class="xsfs-overlay" ref="xsfsOverlay" :class="{ active: isXSFS }" aria-hidden="true">
+      <div class="over">
+        <br />
+        <br />
+      </div>
+    </div>
     <router-view v-slot="{ Component }">
-      <!-- responsive inner container: smaller side padding on mobile, larger on desktop -->
       <div class="px-5 pt-8 pb-8 md:px-6 lg:px-12 max-w-screen-xl mx-auto text-xl">
         <transition name="fade" mode="out-in">
           <component :is="Component" :key="routeKey" />
@@ -50,7 +49,6 @@
 
 <script setup>
 import BackgroundShader from '@/components/BackgroundShader.vue'
-// Removed pageVisible import as it is no longer used
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import router from './router'
@@ -62,7 +60,12 @@ const forcedHideNav = ref(false)
 const showHeader = computed(() => {
   // hide header on home route (exact '/'), on watch route (and its subroutes), or when forced hidden
   if (forcedHideNav.value) return false
-  if (route.path === '/' || route.path.startsWith('/watch')) return false
+  if (
+    route.path === '/' ||
+    route.path.startsWith('/watch') ||
+    route.path.includes('/wright-software')
+  )
+    return false
   return true
 })
 
@@ -79,7 +82,12 @@ onBeforeUnmount(() => {
   window.removeEventListener('toggle-nav-visibility', onToggleNav)
 })
 
-const isXSFS = computed(() => route.path.includes('/xsfs'))
+const isXSFS = computed(
+  () =>
+    route.path.includes('/xsfs') ||
+    route.path.includes('/services') ||
+    route.path.includes('/wright-software')
+)
 
 // delayed active state: stays true until overlay transition finishes to avoid layout jumps
 const isXSFSActive = ref(isXSFS.value)
@@ -167,14 +175,20 @@ onBeforeUnmount(() => {
   position: absolute;
   inset: 0;
   z-index: -1; /* sit above routed content to cover it, but below the header */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%);
+  background: #000;
   opacity: 0;
   transition: opacity 350ms ease;
   pointer-events: none;
+  margin-top: 3em;
 }
 .xsfs-overlay.active {
   opacity: 1;
-  transition: opacity 350ms ease;
+  transition: opacity 350ms ease 400ms;
+}
+
+.over {
+  margin-top: -3em;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .return {
@@ -191,12 +205,6 @@ button {
 .return:hover {
   opacity: 1;
   transition: opacity 100ms ease;
-}
-
-/* optional: dim the shader when xsfs is active (if you prefer to dim rather than fully cover) */
-.shader-dim {
-  filter: brightness(0.35) saturate(0.8);
-  transition: filter 350ms ease;
 }
 
 /* header fades in halfway through the page fade (page fade = 200ms, header delay = 100ms) */
@@ -284,7 +292,7 @@ button {
 }
 .header-row .grid[aria-hidden='false'] {
   opacity: 1;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease 400ms;
 }
 
 /* hide nav/homelink when forced hidden */

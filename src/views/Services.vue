@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <h1 class="lg:text-4xl text-xl mb-4 header text-nowrap">systemctl status</h1>
-    <h2 class="text-center font-extrabold tracking-[.35em] pb-4 opacity-70">
-      this Page is a Work in progress
-    </h2>
+  <div class="about-wright-software">
     <div class="grid place-items-center">
-      <div class="flex place-items-center gap-6">
-        <img src="./../assets/img/w-software.png" class="h-30" />
-        <p class="text-xl lg:text-6xl">Wright Software & Services</p>
+      <div class="flex place-items-center gap-6 pt-10">
+        <img src="./../assets/img/w-software.png" class="h-20 sm:h-30" />
+        <p class="text-4xl lg:text-6xl wright-software">Wright Software</p>
       </div>
     </div>
-    <p class="mt-4 text-center text-3xl">
+    <h2 class="text-center font-extrabold p-4 opacity-70">Excuse the mess - Page is WIP</h2>
+    <p class="mt-4 text-center text-2xl lg:text-3xl">
       If you have any software needs, I am available for hire.
     </p>
     <div class="mt-8 text-2xl">
@@ -33,3 +30,27 @@
 <script setup>
 // placeholder
 </script>
+
+<style scoped>
+.wright-software {
+  font-family: 'Roboto';
+  font-weight: 900;
+}
+
+.about-wright-software {
+  background: radial-gradient(circle, rgb(66, 66, 66) 0%, rgba(255, 255, 255, 0) 60%);
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'Roboto' !important;
+}
+
+p,
+h1,
+h2 {
+  font-family: 'Roboto' !important;
+}
+
+h2 {
+  text-transform: none;
+}
+</style>
