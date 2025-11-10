@@ -1,6 +1,6 @@
 <template>
   <div class="home grid place-items-center">
-    <div class="text-center the-stuff pt-20 lg:pt-50">
+    <div class="text-center the-stuff pt-20 lg:pt-55">
       <img
         src="https://avatars.githubusercontent.com/u/121819290"
         class="rounded-full h-50 mx-auto mb-10 shadow-xl/50"
@@ -17,6 +17,7 @@
         <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
       </div>
       <br />
+      <h2 class="lg:text-8xl text-2xl hero opacity-60 pt-4">This website is a work in progress!</h2>
       <br />
       <div class="flex w-full items-end justify-evenly text-xs gap-5">
         <p><router-link class="nav-link" to="/attributions">About this website</router-link></p>

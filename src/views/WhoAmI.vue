@@ -38,20 +38,28 @@
         acquisition.
       </p>
       <p>
+        I consider myself to be a results-driven engineer. I have 6 years of industry experience in
+        software development, infrastructure management, and security engineering. I have enhanced
+        the security of projects I've worked on by developing custom tooling, monitoring
+        infrastructure on AWS, helping to ensure SOC2 compliance and performing informal penetration
+        testing. I'm a big believer in the idea that 'the impossible just takes a little longer'.
+      </p>
+      <p>
         What follows here is a <span class="font-extrabold">subjective recount</span> of my life as
         it pertains to my interest in technology and my professional career. A more objective, fact
         based recount of my career can be found at
         <router-link class="underline" to="/projects">the Projects page</router-link>.
       </p>
 
+      <h2>Professional Career</h2>
       <img
         class="shadow-xl/50 block mx-auto md:float-right md:ml-6 mb-4 md:mb-0 h-64 md:h-72 rounded-2xl"
         src="../assets/img/kainos-start.jpg"
       />
-      <h2>Professional Career</h2>
       <p>
         In 2019, I began my professional career as an Apprentice Software Engineer at Kainos. Over
-        the course of my apprenticeship, I gained experience in a variety of technologies and
+        the course of my apprenticeship, I gained experience in a variety of technologies and soft
+        skills.
       </p>
 
       <img
@@ -70,11 +78,42 @@
         In 2022, I moved roles at Kainos from a software engineer to a security engineer. Since my
         time there, I have learned...
       </p>
+      <p>
+        For my university final year honours project, I created an Android application written in
+        Kotlin and Jetpack Compose (a newly released technology at the time), and wrote the backend
+        API for it in Express. A central API was planned so that it could be used across all sorts
+        of interfaces, and allow other applications to use it.
+      </p>
+      <p>
+        I had wanted to give myself a challenge, so I had to learn Kotlin and Jetpack Compose
+        uniquely for this project. The project was aimed to be a 'Google Maps' or 'TripAdvisor' for
+        people with disabilities of all kinds. The data was intended to be crowdsourced, so users
+        would be able to search for a location and review what other users had to say about it and
+        if it had key features for accessibility, such as usable ramps or quiet spaces. I also
+        learnt a lot about accessibility within UI/UX and the importance of such during this
+        project. I finished this project in 2023, and was rewarded with a first class for my
+        honours.
+      </p>
       <img
         class="shadow-xl/50 block mx-auto md:float-right md:ml-6 mb-4 md:mb-0 h-64 rounded-2xl"
         src="../assets/img/graduation.jpg"
       />
-      <p>I graduated university in 2023. After that, I moved to working at Kainos full time.</p>
+      <p>
+        I graduated university in 2023 achieving a First Class Honours, Bachelors of Science in
+        Computing Systems. After that, I was offered to remain at Kainos and was promoted to full
+        time Assosiate Security Engineer.
+      </p>
+
+      <p>In 2024, I started my largest solo project in Kainos to date. This was Lifeline.</p>
+
+      <p>
+        Since its completion, Lifeline has helped me stay ahead of new releases and helped my team
+        plan ahead of dependency deprecations, saving us from having to frantically update
+        dependencies and ensure that we rarely have to do major renovations or overhaul. While that
+        may have a maintenance impact in the short term, compared to previous renovations we've had
+        to do it has saved us countless hours in the long term.
+      </p>
+
       <h2>Current Interests and Hobbies</h2>
 
       <img
@@ -92,7 +131,14 @@
         class="shadow-xl/50 block mx-auto md:float-right md:ml-6 mb-4 md:mb-0 w-64 md:w-72 rounded-2xl"
         src="../assets/img/computer-built.jpg"
       />
-      <p>I built my own computer</p>
+      <p>
+        REPLACE THIS: I also enjoy building computers. The related image for this section shows a
+        computer that I built from parts that I sourced myself. I enjoy the challenge of picking out
+        compatible parts, and the satisfaction of seeing it all come together and work at the end.
+        I've used this computer to learn a lot about Linux and programming. I also used it to do
+        video editing for a charity on a voulunteer basis. I was able to learn a lot about video
+        editing and production through this experience.
+      </p>
       <br />
       <hr />
       <h2>Early Days</h2>
@@ -105,6 +151,12 @@
         remember. Some of my earliest memories include being able to type on my Granddad's Windows
         98 PC before being able to properly read and write, playing Need for Speed on the Xbox, and
         messing about with Flight Simulators with my dad on his Windows XP laptop (see picture).
+        REPLACE THIS: I was always fascinated by how these machines worked, and would often try to
+        take them apart to see what was inside. My parents were always supportive of my interests,
+        and would often buy me books and magazines about computers and technology. I remember
+        getting a magazine called 'Computer Shopper' that had a section on building your own PC. I
+        was hooked from then on. I would spend hours reading about different components and how they
+        worked together.
       </p>
       <h2>School Awards, Accomplishments and Interests</h2>
       <p>
@@ -138,19 +190,36 @@
       />
       <p>
         I was also involve in various other extra curricular activities - I was a senior member of
-        the sound and lighting team (see picture), as well as a member of the school choir and
-        orchestra. I also took part in the Duke of Edinburgh Award scheme, achieving my Gold Award
-        in 2018. All of these activities helped me to develop a range of skills, from teamwork and
-        leadership to technical expertise and creativity.
+        the sound and lighting team (see picture). As part of this, I lead teams to deliver
+        behind-the-scenes services to various events that happened in the school, from regular
+        events like assemblies to one-offs like award nights, discos and public drama performances.
+        I was also responsible for training and introducing new team members, getting them ready to
+        help serve the school in their own way. I was also a member of the school choir and
+        orchestra, working my way from lower desks all the way to first desk.
       </p>
 
       <img
         class="shadow-xl/50 block mx-auto md:float-right md:ml-6 mb-4 md:mb-0 h-64 rounded-2xl"
         src="../assets/img/dofe.jpg"
       />
-      <p>I completed my Duke of Ed in 2018. I achived all three levels, Bronze, Silver and Gold.</p>
+      <p>
+        I took part in the Duke of Edinburgh Award scheme, achieving my Gold Award in 2018. I
+        achieved all three levels, Bronze, Silver and Gold.
+      </p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped></style>
