@@ -44,6 +44,12 @@
         </transition>
       </div>
     </router-view>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 

@@ -1,7 +1,70 @@
 <template>
   <div>
     <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/projects</h1>
-    <p class="">Work in progress, check back later ;)</p>
+    <h2 class="text-center font-extrabold tracking-[.35em] pb-4">Work in progress</h2>
+    <p class="text-2xl text-center">
+      This is a objective account of all the projects I've worked on
+    </p>
+    <h2>Professional Career</h2>
+    <h2>Kainos</h2>
+    <h2>
+      Smart
+      <a class="underline" href="https://www.kainos.com/workday/products/smart-shield">Shield</a>
+    </h2>
+    <p style="opacity: 0.6">Associate Security Engineer (2023 - now)</p>
+    <div class="row">
+      <div class="col-sm-4">
+        <p style="opacity: 0.6">2023 - now</p>
+      </div>
+      <div class="col-sm-8">
+        <p>
+          Since graduating in Summer 2023, I have been continuing to develop my skills in this
+          project, learning more about pen-testing, BurpSuite, Jenkins, communication and so much
+          more.
+        </p>
+      </div>
+    </div>
+    <p>
+      <a href="https://www.kainos.com/careers/student-and-graduates/earn-as-you-learn"
+        ><img src="" class="img-fluid" style="max-height: 100px"
+      /></a>
+    </p>
+    <br />
+    <p style="opacity: 0.6">EAYL Trainee & Associate Security Engineer (2022 - 2023)</p>
+    <div class="row">
+      <div class="col-sm-4">
+        <p style="opacity: 0.6">2022 - 2023</p>
+      </div>
+      <div class="col-sm-8 cn" style="text-align: justify">
+        I joined this project in Summer 2022, and have been learning the various behind-the-scenes
+        components that go into security for software projects like Shield.
+      </div>
+    </div>
+    <p style="opacity: 0.6">EAYL Apprentice & Trainee Software Engineer (2019 - 2023)</p>
+    <div class="row">
+      <div class="col-sm-4">
+        <p><img src="" height="100px" /></p>
+        <p></p>
+        <h2>
+          Smart
+          <a class="underline" href="https://www.kainos.com/workday/products/smart-test">Test</a>
+          &
+          <a
+            class="underline"
+            href="https://www.kainos.com/workday/products/kainos-smart-audit-for-workday"
+            >Audit</a
+          >
+        </h2>
+        <p style="opacity: 0.6">2019 - 2022</p>
+      </div>
+      <div class="col-sm-8 cn" style="text-align: justify">
+        I spent 2.5 years here and gained skills and knowledge in Angular, TypeScript, PostgreSQL
+        and Java. I also learned about web automation and learning how to make and manage automated
+        tests
+      </div>
+    </div>
+    <p>informal Career</p>
+    <p>Non-technical</p>
     <!--<div class="">
       <br />
       <p style="opacity: 0.6">Table of contents</p>

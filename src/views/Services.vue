@@ -3,7 +3,7 @@
     <div class="grid place-items-center">
       <div class="flex place-items-center gap-6 pt-10">
         <img src="./../assets/img/w-software.png" class="h-20 sm:h-30" />
-        <p class="text-4xl lg:text-6xl wright-software">Wright Software</p>
+        <p class="text-4xl md:text-6xl wright-software">Wright Software</p>
       </div>
     </div>
     <h2 class="text-center font-extrabold p-4 opacity-70">Excuse the mess - Page is WIP</h2>
@@ -38,7 +38,7 @@
 }
 
 .about-wright-software {
-  background: radial-gradient(circle, rgb(66, 66, 66) 0%, rgba(255, 255, 255, 0) 60%);
+  background: radial-gradient(circle, rgb(66, 66, 66) 0%, rgba(255, 255, 255, 0) 30%);
   padding: 2rem;
   border-radius: 1rem;
   font-family: 'Roboto' !important;
