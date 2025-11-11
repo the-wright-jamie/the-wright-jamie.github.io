@@ -5,29 +5,29 @@
       "name": "jamie-wright",
       "dependencies": {
         "@headlessui/vue": "^1.7.23",
-        "chart.js": "^4.4.8",
+        "chart.js": "^4.5.1",
         "endent": "^2.1.0",
         "fuse.js": "^7.1.0",
         "vite-plugin-md": "^0.22.5",
-        "vue": "^3.5.13",
+        "vue": "^3.5.24",
         "vue-mermaid-string": "^7.0.0",
-        "vue-router": "^4.5.0",
+        "vue-router": "^4.6.3",
       },
       "devDependencies": {
-        "@rushstack/eslint-patch": "^1.10.5",
-        "@tailwindcss/postcss": "^4.0.0",
-        "@tsconfig/node20": "^20.1.4",
+        "@rushstack/eslint-patch": "^1.14.1",
+        "@tailwindcss/postcss": "^4.1.17",
+        "@tsconfig/node20": "^20.1.6",
         "@types/node": "24.1.0",
-        "@vitejs/plugin-vue": "6.0.0",
+        "@vitejs/plugin-vue": "6.0.1",
         "@vue/eslint-config-prettier": "^10.2.0",
-        "@vue/eslint-config-typescript": "^14.4.0",
+        "@vue/eslint-config-typescript": "^14.6.0",
         "@vue/tsconfig": "^0.8.1",
         "gh-pages": "^6.3.0",
-        "postcss": "^8.5.3",
-        "prettier": "^3.5.2",
-        "tailwindcss": "^4.0.0",
-        "typescript": "^5.8.3",
-        "typescript-eslint": "^8.32.1",
+        "postcss": "^8.5.6",
+        "prettier": "^3.6.2",
+        "tailwindcss": "^4.1.17",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.4",
         "vite": "7.0.5",
         "vite-plugin-checker": "0.11.0",
         "vue-tsc": "3.0.3",
@@ -171,7 +171,7 @@
 
     "@pkgr/core": ["@pkgr/core@0.2.7", "", {}, "sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg=="],
 
-    "@rolldown/pluginutils": ["@rolldown/pluginutils@1.0.0-beta.19", "", {}, "sha512-3FL3mnMbPu0muGOCaKAhhFEYmqv9eTfPSJRJmANrCwtgK8VuxpsZDGK+m0LYAGoyO8+0j5uRe4PeyPDK1yA/hA=="],
+    "@rolldown/pluginutils": ["@rolldown/pluginutils@1.0.0-beta.29", "", {}, "sha512-NIJgOsMjbxAXvoGq/X0gD7VPMQ8j9g0BiDaNjVNVjvl+iKXxL3Jre0v31RmBYeLEmkbj2s02v8vFTbUXi5XS2Q=="],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.41.1", "", { "os": "android", "cpu": "arm" }, "sha512-NELNvyEWZ6R9QMkiytB4/L4zSEaBC03KIXEghptLGLZWJ6VPrL63ooZQCOnlx36aQPGhzuOMwDerC1Eb2VmrLw=="],
 
@@ -353,7 +353,7 @@
 
     "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.46.4", "", { "dependencies": { "@typescript-eslint/types": "8.46.4", "eslint-visitor-keys": "^4.2.1" } }, "sha512-/++5CYLQqsO9HFGLI7APrxBJYo+5OCMpViuhV8q5/Qa3o5mMrF//eQHks+PXcsAVaLdn817fMuS7zqoXNNZGaw=="],
 
-    "@vitejs/plugin-vue": ["@vitejs/plugin-vue@6.0.0", "", { "dependencies": { "@rolldown/pluginutils": "1.0.0-beta.19" }, "peerDependencies": { "vite": "^5.0.0 || ^6.0.0 || ^7.0.0", "vue": "^3.2.25" } }, "sha512-iAliE72WsdhjzTOp2DtvKThq1VBC4REhwRcaA+zPAAph6I+OQhUXv+Xu2KS7ElxYtb7Zc/3R30Hwv1DxEo7NXQ=="],
+    "@vitejs/plugin-vue": ["@vitejs/plugin-vue@6.0.1", "", { "dependencies": { "@rolldown/pluginutils": "1.0.0-beta.29" }, "peerDependencies": { "vite": "^5.0.0 || ^6.0.0 || ^7.0.0", "vue": "^3.2.25" } }, "sha512-+MaE752hU0wfPFJEUAIxqw18+20euHHdxVtMvbFcOEpjEyfqXH/5DCoTHiVJ0J29EhTJdoTkjEv5YBKU9dnoTw=="],
 
     "@volar/language-core": ["@volar/language-core@2.4.20", "", { "dependencies": { "@volar/source-map": "2.4.20" } }, "sha512-dRDF1G33xaAIDqR6+mXUIjXYdu9vzSxlMGfMEwBxQsfY/JMUEXSpLTR057oTKlUQ2nIvCmP9k94A8h8z2VrNSA=="],
 
