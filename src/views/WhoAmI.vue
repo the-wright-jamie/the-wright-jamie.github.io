@@ -54,7 +54,7 @@
 
       <h2>Professional Career</h2>
       <img
-        class="shadow-xl/50 block md:float-right md:ml-4 h-64 md:h-72 rounded-2xl"
+        class="shadow-xl/50 mx-auto md:float-right md:ml-6 mb-4 mt-4 md:mb-0 h-64 md:h-72 rounded-2xl"
         src="../assets/img/kainos-start.jpg"
       />
       <p>
@@ -76,7 +76,7 @@
       </p>
 
       <img
-        class="shadow-xl/50 block md:float-left h-64 md:h-72 rounded-2xl md:mr-4"
+        class="shadow-xl/50 block mx-auto md:float-left md:mr-6 h-64 md:h-72 rounded-2xl"
         src="../assets/img/uni-start.jpg"
       />
       <p>

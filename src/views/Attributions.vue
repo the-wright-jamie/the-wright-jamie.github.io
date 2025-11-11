@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-4xl mb-4 header">cat README.md</h1>
-    <p class="flex">
+    <p class="">
       Total time spent on making this website so far:
       <a
         href="https://wakatime.com/badge/user/604ea863-2306-4cbd-95b6-d2dbf642c915/project/1e488b47-511b-4f44-b57c-0792da6785fc"
