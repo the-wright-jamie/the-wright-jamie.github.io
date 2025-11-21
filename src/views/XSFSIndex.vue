@@ -3,7 +3,7 @@
     <p>
       When I get round to it, my blog will be here. This space will contain source code (or links to
       it). It will be a place for me to share thoughts and non-academic research into software and
-      security. In the future, I may also share miscellaneous projects and demos here. Below is the
+      security. In the future, I may also share miscellaneous Portfolio and demos here. Below is the
       current efforts of my migration from the old site.
     </p>
     <br />

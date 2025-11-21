@@ -22,7 +22,7 @@
         <p>
           <router-link class="nav-link text-nowrap" to="/whoami">Who am I?</router-link>
         </p>
-        <p><router-link class="nav-link" to="/projects">Projects</router-link></p>
+        <p><router-link class="nav-link" to="/portfolio">Portfolio</router-link></p>
         <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
         <p><router-link class="nav-link" to="/services">Services</router-link></p>
         <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
@@ -42,10 +42,11 @@
         <transition name="fade" mode="out-in">
           <component :is="Component" :key="routeKey" />
         </transition>
+        <div v-if="!forcedHideNav" class="footer flex justify-end">
+          <span class="text-2xl rounded-2xl beta-pill m-8 p-2 px-4 opacity-50">WIP</span>
+        </div>
       </div>
     </router-view>
-    <br />
-    <br />
     <br />
     <br />
     <br />
@@ -148,6 +149,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
+.footer {
+  font-family: 'Forge';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /* fade: fade out, pause while hidden, then fade in */
 .fade-enter-active,
 .fade-leave-active {

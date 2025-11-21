@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1 class="lg:text-4xl text-xl mb-4 header">whoami</h1>
-    <h2 class="text-center font-extrabold tracking-[.35em] pb-4">Work in progress</h2>
     <div class="text-xl space-y-4 text-justify">
-      <hr />
       <p class="italic">
         Once upon a time, a human being figured out how to imbue rocks with the power of
         electricity. Building upon the discoveries of those who came before them, they taught this
@@ -49,7 +47,7 @@
         What follows here is a <span class="font-extrabold">subjective recount</span> (i.e from my
         perspective, how I think and feel) of my life as it pertains to my interest in technology
         and my professional career. A more objective, fact based recount of my career can be found
-        at <router-link class="underline" to="/projects">the Projects page</router-link>.
+        at <router-link class="underline" to="/portfolio">the Portfolio page</router-link>.
       </p>
 
       <h2>Professional Career</h2>
@@ -114,7 +112,7 @@
         application written in Kotlin and Jetpack Compose (a newly released technology at the time),
         and wrote the backend API for it in Express. For this project, a central API was planned so
         that it could be used across all sorts of interfaces, and allow other applications and
-        projects to use the data that my project collected.
+        Portfolio to use the data that my project collected.
       </p>
       <p>
         The project was aimed to be a 'Google Maps' or 'TripAdvisor' for people with disabilities of
@@ -146,7 +144,7 @@
       </p>
       <p>
         In 2025, I've been mostly focused on improving my own skills as a security engineer,
-        learning new technologies and methodologies to better protect the projects I work on. I've
+        learning new technologies and methodologies to better protect the Portfolio I work on. I've
         also been renewing and creating documentation, building threat models and improving our
         incident response plans to ensure we're prepared for any potential security incidents.
       </p>
@@ -165,7 +163,7 @@
         that I do something new every time. For example, for my university project, Kotlin and
         Jetpack Compose were completely new languages and frameworks to me at the time. More
         recently, I took on learning Vue for Lifeline (actually, this website is technically a fork
-        of Lifeline, as I use it as a springboard to bootstrap new Vue projects rather than have to
+        of Lifeline, as I use it as a springboard to bootstrap new Vue Portfolio rather than have to
         setup a new Vue project every time). Even more recently, for a private project for a
         personal client, I took on Golang to write the API, and I'm learning Nuxt for their
         front-end.

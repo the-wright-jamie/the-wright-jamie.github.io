@@ -1,8 +1,7 @@
 import Attributions from '@/views/Attributions.vue'
 import Contact from '@/views/Contact.vue'
 import Home from '@/views/Home.vue'
-import Project from '@/views/Project.vue'
-import Projects from '@/views/Projects.vue'
+import Portfolio from '@/views/Portfolio.vue'
 import Services from '@/views/Services.vue'
 import Showcase from '@/views/Showcase.vue'
 import Watch from '@/views/Watch.vue'
@@ -29,14 +28,13 @@ const blogRoutes = Object.entries(blogModules).map(([path, mod]: [string, any]) 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home', component: Home },
   { path: '/whoami', name: 'whoami', component: WhoAmI },
-  { path: '/projects', name: 'projects', component: Projects },
+  { path: '/portfolio', name: 'Portfolio', component: Portfolio },
   { path: '/contact', name: 'contact', component: Contact },
   { path: '/services', name: 'services', component: Services },
   { path: '/wright-software', name: 'wright-software', component: Services },
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/watch', name: 'watch', component: Watch },
-  { path: '/project/:id', name: 'project', component: Project, props: true },
   {
     path: '/xsfs',
     component: XSFS,

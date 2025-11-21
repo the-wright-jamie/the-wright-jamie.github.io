@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/projects</h1>
-    <h2 class="text-center font-extrabold tracking-[.35em] pb-4">Work in progress</h2>
+    <h1 class="lg:text-4xl text-xl mb-4 header">cd ~/portfolio</h1>
     <p class="text-2xl text-center">
-      This is a objective account of all the projects I've worked on
+      This is an objective account of all the projects I've worked on
     </p>
     <h2>Professional Career</h2>
     <h2>Kainos</h2>
@@ -37,7 +36,7 @@
       </div>
       <div class="col-sm-8 cn" style="text-align: justify">
         I joined this project in Summer 2022, and have been learning the various behind-the-scenes
-        components that go into security for software projects like Shield.
+        components that go into security for software Portfolio like Shield.
       </div>
     </div>
     <p style="opacity: 0.6">EAYL Apprentice & Trainee Software Engineer (2019 - 2023)</p>
@@ -71,7 +70,7 @@
 
       <div class="list-group" data-bs-theme="dark">
         <a
-          href="#projects"
+          href="#Portfolio"
           style="font-weight: normal"
           class="list-group-item list-group-item-action"
           >Professional</a
@@ -97,8 +96,8 @@
 
       <hr size="5" style="color: white" />
 
-      <br id="projects" />
-      <h3>Projects I've Worked On</h3>
+      <br id="Portfolio" />
+      <h3>Portfolio I've Worked On</h3>
 
       <div class="row">
         <div class="col-sm-4">
@@ -180,7 +179,7 @@
         </div>
         <div class="col-sm-8 cn" style="text-align: justify">
           I joined this project in Summer 2022, and have been learning the various behind-the-scenes
-          components that go into security for software projects like Shield.
+          components that go into security for software Portfolio like Shield.
         </div>
       </div>
       <p style="opacity: 0.6">EAYL Apprentice & Trainee Software Engineer (2019 - 2023)</p>

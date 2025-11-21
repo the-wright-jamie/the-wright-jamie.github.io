@@ -46,6 +46,18 @@
   src: url(../fonts/roboto.ttf);
 }
 
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  src: url(../fonts/robotocondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  src: url(../fonts/googlesans.ttf);
+}
+
 b {
   font-family: 'Roboto Condensed';
 }
@@ -133,12 +145,12 @@ h2 {
 h2 {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 h3 {
   font-family: 'Pixelify';
-  font-size: large;
+  font-size: x-large;
   font-weight: 200;
   padding-bottom: 0.25em;
 }
@@ -258,14 +270,8 @@ hr {
 }
 
 .beta-pill {
-  font-family: 'Roboto Black';
   background-color: #ffce1b;
   color: #000000;
-  margin-left: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-right: 0.75em;
-  padding-left: 0.75em;
 }
 
 .padder {
