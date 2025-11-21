@@ -29,6 +29,10 @@ const defaults = {
 // LOW: #575757
 // MID: #9c9c9c
 
+// USED IN PROFILE BG
+// LOW: #666666
+// MID: #000000
+
 function hexToRgba(hex) {
   if (!hex) return [0, 0, 0, 0]
   let s = String(hex).trim()

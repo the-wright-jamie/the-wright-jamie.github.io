@@ -4,7 +4,9 @@
       <img src="./../assets/img/w-software.png" class="h-20 sm:h-30" />
       <p class="text-4xl md:text-6xl wright-software text-center">Wright Software</p>
     </div>
-    <h2 class="text-center font-extrabold p-4 opacity-70">Sole engineer, contract for-hire</h2>
+    <h2 class="text-center font-extrabold p-4 opacity-70">
+      Sole engineer, contractable or for-hire
+    </h2>
     <hr class="mt-4 mb-4" />
 
     <p class="mt-8 text-center text-2xl lg:text-3xl">

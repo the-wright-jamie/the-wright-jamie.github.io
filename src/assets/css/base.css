@@ -361,3 +361,7 @@ hr {
   border-radius: 50%;
   vertical-align: middle;
 }
+
+html {
+  scrollbar-gutter: stable;
+}

@@ -70,7 +70,8 @@ const showHeader = computed(() => {
   if (
     route.path === '/' ||
     route.path.startsWith('/watch') ||
-    route.path.includes('/wright-software')
+    route.path.includes('/wright-software') ||
+    route.path.includes('/hero')
   )
     return false
   return true

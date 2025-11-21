@@ -1,5 +1,6 @@
 import Attributions from '@/views/Attributions.vue'
 import Contact from '@/views/Contact.vue'
+import Hero from '@/views/Hero.vue'
 import Home from '@/views/Home.vue'
 import Portfolio from '@/views/Portfolio.vue'
 import Services from '@/views/Services.vue'
@@ -35,6 +36,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/watch', name: 'watch', component: Watch },
+  { path: '/hero', name: 'hero', component: Hero },
   {
     path: '/xsfs',
     component: XSFS,
