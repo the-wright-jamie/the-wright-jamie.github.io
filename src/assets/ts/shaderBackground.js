@@ -20,7 +20,7 @@ const defaults = {
   background_threshold: 0.0,
   color_low_threshold: 0.24,
   color_mid_threshold: 0.48,
-  color_low: localStorage.getItem('shader-low') || '#465fc7',
+  color_low: localStorage.getItem('shader-low') || '#666666',
   color_mid: localStorage.getItem('shader-mid') || '#000000',
   color_high: '#000000'
 }
@@ -31,6 +31,10 @@ const defaults = {
 
 // USED IN PROFILE BG
 // LOW: #666666
+// MID: #000000
+
+// BLUE COLOUR
+// LOW: #465FC7
 // MID: #000000
 
 function hexToRgba(hex) {
