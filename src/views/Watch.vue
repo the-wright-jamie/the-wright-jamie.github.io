@@ -21,7 +21,7 @@ import { setColorLow, setColorMid } from '@/assets/ts/shaderBackground'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-const lowColor = ref('#465fc7')
+const lowColor = ref('#666666')
 const midColor = ref('#000000')
 const controlsHidden = ref(false)
 
@@ -78,7 +78,7 @@ function toggleNav() {
 }
 
 function resetColors() {
-  lowColor.value = '#465fc7'
+  lowColor.value = '#666666'
   midColor.value = '#000000'
   try {
     setColorLow(lowColor.value)

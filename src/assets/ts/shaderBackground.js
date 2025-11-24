@@ -12,6 +12,11 @@ let u_resolution, u_time, u_pixelation, u_zoom, u_gradient_pixelation
 let u_background_threshold, u_color_low_threshold, u_color_mid_threshold
 let u_color_low, u_color_mid, u_color_high
 
+let storage_color_low = localStorage.getItem('shader-low') || '#666666'
+let storage_color_mid = localStorage.getItem('shader-mid') || '#000000'
+let should_have_high_accent =
+  storage_color_low == '#666666' && storage_color_mid == '#000000' ? '#ED5700' : '#000000'
+
 const defaults = {
   speed: 0.05,
   pixelation: 4.0,
@@ -20,9 +25,9 @@ const defaults = {
   background_threshold: 0.0,
   color_low_threshold: 0.24,
   color_mid_threshold: 0.48,
-  color_low: localStorage.getItem('shader-low') || '#666666',
-  color_mid: localStorage.getItem('shader-mid') || '#000000',
-  color_high: '#000000'
+  color_low: storage_color_low,
+  color_mid: storage_color_mid,
+  color_high: should_have_high_accent
 }
 
 // ORIGINAL COLOURS
@@ -205,6 +210,7 @@ export function setColorLow(hex) {
   defaults.color_low = hex
   try {
     if (gl && u_color_low) setColorUniform(u_color_low, hex)
+    setColorHigh()
   } catch (e) {
     // ignore if not ready
   }
@@ -215,7 +221,27 @@ export function setColorMid(hex) {
   defaults.color_mid = hex
   try {
     if (gl && u_color_mid) setColorUniform(u_color_mid, hex)
+    setColorHigh()
   } catch (e) {
     // ignore if not ready
+  }
+}
+
+function setColorHigh() {
+  let should_show_accent = defaults.color_low == '#666666' && defaults.color_mid == '#000000'
+  let orange = '#ED5700'
+  let black = '#000000'
+  try {
+    if (should_show_accent) {
+      console.log('Setting uniform high color to orange')
+      defaults.color_high = orange
+      if (gl && u_color_high) setColorUniform(u_color_high, orange)
+    } else {
+      console.log('Setting uniform high color to black')
+      defaults.color_high = black
+      if (gl && u_color_high) setColorUniform(u_color_high, black)
+    }
+  } catch (e) {
+    console.log(e)
   }
 }

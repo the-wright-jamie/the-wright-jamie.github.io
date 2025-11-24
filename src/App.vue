@@ -43,7 +43,7 @@
           <component :is="Component" :key="routeKey" />
         </transition>
         <div v-if="!forcedHideNav" class="footer flex justify-end">
-          <span class="text-2xl rounded-2xl beta-pill m-8 p-2 px-4 opacity-50">WIP</span>
+          <span class="text-2xl rounded-2xl beta-pill m-8 p-2 pl-4 pr-3 opacity-50">WIP</span>
         </div>
       </div>
     </router-view>
@@ -275,6 +275,7 @@ button {
 .homelink {
   z-index: 50;
   margin-bottom: 0.5rem; /* separate title from nav on small screens */
+  font-family: 'Pixelify';
 }
 
 .links {

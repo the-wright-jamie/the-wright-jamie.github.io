@@ -8,7 +8,7 @@
         rock how to think, to compute, and to connect with other supercharged rocks across the
         globe.
       </p>
-      <p class="italic tracking-[.35em] font-extrabold text-center">
+      <p class="italic tracking-[.35em] font-extrabold text-center forge">
         And the world was never the same again.
       </p>
       <p class="italic">

@@ -31,7 +31,7 @@
 @font-face {
   font-family: 'LCD';
   font-style: normal;
-  src: url(../fonts/LCD.ttf);
+  src: url(../fonts/lcd.ttf);
 }
 
 @font-face {
@@ -116,7 +116,7 @@ body {
 }
 
 .hero {
-  font-family: Pixelify;
+  font-family: 'Pixelify';
 }
 
 .nav-link {
@@ -125,7 +125,7 @@ body {
 }
 
 p {
-  font-family: Pixelify;
+  font-family: 'Pixelify';
   opacity: 90%;
 }
 
@@ -137,9 +137,13 @@ p {
   content: '#> ';
 }
 
+.forge {
+  font-family: 'Forge';
+}
+
 h1,
 h2 {
-  font-family: Pixelify;
+  font-family: 'Forge';
 }
 
 h2 {
@@ -270,7 +274,7 @@ hr {
 }
 
 .beta-pill {
-  background-color: #ffce1b;
+  background-color: #ed5700;
   color: #000000;
 }
 
