@@ -1,14 +1,15 @@
 <template>
   <div class="home grid place-items-center">
-    <div class="text-center the-stuff pt-20 lg:pt-45">
+    <div class="text-center the-stuff pt-30 lg:pt-50">
       <img
         src="https://avatars.githubusercontent.com/u/121819290"
         class="rounded-full h-50 mx-auto mb-10 shadow-xl/50"
       />
-      <h1 class="lg:text-8xl text-4xl hero">Jamie Wright</h1>
-      <h2 class="lg:text-8xl text-4xl opacity-60 pt-4">Software Engineer & Systems Designer</h2>
-      <br />
-      <div class="grid w-full items-end text-center gap-5 lg:grid-cols-6 grid-cols-2">
+      <h1 class="lg:text-8xl text-4xl pb-8 hero">Jamie Wright</h1>
+      <span class="text-2xl lg:text-4xl opacity-60 forge"
+        >Software Engineer & Systems Designer</span
+      >
+      <div class="grid w-full items-end text-center pt-8 gap-5 lg:grid-cols-6 grid-cols-2">
         <p><router-link class="nav-link text-nowrap" to="/whoami">Who am I?</router-link></p>
         <p><router-link class="nav-link" to="/portfolio">Portfolio</router-link></p>
         <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
