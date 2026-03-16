@@ -3,7 +3,7 @@ import Contact from '@/views/Contact.vue'
 import Hero from '@/views/Hero.vue'
 import Home from '@/views/Home.vue'
 import Portfolio from '@/views/Portfolio.vue'
-import Services from '@/views/Services.vue'
+import Services from '@/views/rightware.vue'
 import Showcase from '@/views/Showcase.vue'
 import Watch from '@/views/Watch.vue'
 import WhoAmI from '@/views/WhoAmI.vue'
@@ -31,8 +31,8 @@ const routes: RouteRecordRaw[] = [
   { path: '/whoami', name: 'whoami', component: WhoAmI },
   { path: '/portfolio', name: 'Portfolio', component: Portfolio },
   { path: '/contact', name: 'contact', component: Contact },
-  { path: '/services', name: 'services', component: Services },
-  { path: '/wright-software', name: 'wright-software', component: Services },
+  { path: '/rightware', name: 'rightware', component: Services },
+  { path: '/right-ware', name: 'wright-software', component: Services },
   { path: '/showcase', name: 'showcase', component: Showcase },
   { path: '/attributions', name: 'attributions', component: Attributions },
   { path: '/watch', name: 'watch', component: Watch },

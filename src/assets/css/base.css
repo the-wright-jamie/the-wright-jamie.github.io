@@ -105,6 +105,37 @@ b {
   --section-gap: 160px;
 }
 
+.rightware {
+  font-family: 'Google Sans';
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: 'ROND' 0 !important;
+}
+
+.about-rightware {
+  padding: 2rem;
+  border-radius: 1rem;
+  font-variation-settings: 'ROND' 100;
+  font-family: 'Google Sans' !important;
+}
+
+.rightware-one {
+  color: #f99d1b;
+  font-variation-settings: 'ROND' 0 !important;
+}
+
+.rightware-two {
+  color: #064f6e;
+  font-variation-settings: 'ROND' 0 !important;
+}
+
+.title {
+  font-family: 'Roboto Condensed';
+  margin-left: -0.18em;
+  margin-right: -0.18em;
+  font-weight: 900;
+}
+
 a {
   cursor: pointer;
 }

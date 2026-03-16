@@ -24,7 +24,7 @@
         </p>
         <p><router-link class="nav-link" to="/portfolio">Portfolio</router-link></p>
         <p><router-link class="nav-link" to="/showcase">Showcase</router-link></p>
-        <p><router-link class="nav-link" to="/services">Services</router-link></p>
+        <p><router-link class="nav-link" to="/rightware">rightware</router-link></p>
         <p><router-link class="nav-link" to="/contact">Contact</router-link></p>
         <p><router-link class="nav-link" to="/xsfs">XSFS</router-link></p>
       </div>
@@ -70,7 +70,7 @@ const showHeader = computed(() => {
   if (
     route.path === '/' ||
     route.path.startsWith('/watch') ||
-    route.path.includes('/wright-software') ||
+    route.path.includes('/right-ware') ||
     route.path.includes('/hero')
   )
     return false
@@ -93,8 +93,8 @@ onBeforeUnmount(() => {
 const isXSFS = computed(
   () =>
     route.path.includes('/xsfs') ||
-    route.path.includes('/services') ||
-    route.path.includes('/wright-software')
+    route.path.includes('/rightware') ||
+    route.path.includes('/right-ware')
 )
 
 // delayed active state: stays true until overlay transition finishes to avoid layout jumps
@@ -190,7 +190,7 @@ onBeforeUnmount(() => {
   position: absolute;
   inset: 0;
   z-index: -1; /* sit above routed content to cover it, but below the header */
-  background: #000;
+  background: #181818;
   opacity: 0;
   transition: opacity 350ms ease;
   pointer-events: none;
@@ -203,7 +203,7 @@ onBeforeUnmount(() => {
 
 .over {
   margin-top: -3em;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(180deg, #18181800, #181818ff);
 }
 
 .return {

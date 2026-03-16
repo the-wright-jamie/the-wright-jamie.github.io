@@ -18,7 +18,7 @@
       <h2>Hi, I'm Jamie</h2>
       <img
         class="shadow-xl/50 block mx-auto md:float-left md:mr-6 mb-4 md:mb-0 h-48 md:h-64 md:w-64 rounded-2xl"
-        src="../assets/img/me.jpg"
+        src="https://avatars.githubusercontent.com/u/121819290"
       />
       <p>I'm a security and software engineer from Northern Ireland.</p>
 
